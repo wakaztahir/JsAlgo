@@ -4,16 +4,17 @@ var maxSubArraySum = function (arr, num) {
     if (num > arr.length) {
         return null;
     }
-    var max = -Infinity;
-    for (var i = 0; i < arr.length; i++) {
-        var temp = 0;
-        for (var j = 0; j < num; j++) {
-            temp += arr[i + j];
-        }
-        if (temp > max) {
-            max = temp;
-        }
+    var max = 0;
+    var temp;
+    for (var i = 0; i < num; i++) {
+        max += arr[i];
     }
+    temp = max;
+    for (var i = num; i < arr.length; i++) {
+        temp = temp - arr[i - num] + arr[i];
+        max = Math.max(max, temp);
+    }
+    return max;
     return max;
 };
 exports.default = maxSubArraySum;
