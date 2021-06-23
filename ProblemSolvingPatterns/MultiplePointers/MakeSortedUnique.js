@@ -5,6 +5,7 @@ var makeSortedUnique = function (arr1) {
             arr1[++i] = arr1[j];
         }
     }
+    console.log("Unique Values : " + (arr1.length > 0 ? (i + 1) : i));
     return arr1;
 };
 module.exports = makeSortedUnique;

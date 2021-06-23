@@ -4,7 +4,7 @@
  * @param str2
  * @returns {boolean}
  */
-const areAnagrams = (str1, str2) => {
+const areAnagrams = (str1: string, str2: string) => {
     if (str1.length !== str2.length) {
         return false
     }

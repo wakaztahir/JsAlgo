@@ -4,7 +4,7 @@
  * @param arr2
  * @returns {boolean}
  */
-const areSameSquared = (arr1, arr2) => {
+const areSameSquared = (arr1:number[], arr2:number[]) => {
 
     if (arr1.length !== arr2.length) {
         return false
