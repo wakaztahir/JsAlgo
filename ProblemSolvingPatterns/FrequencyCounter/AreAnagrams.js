@@ -4,29 +4,27 @@
  * @param str2
  * @returns {boolean}
  */
-const areAnagrams = (str1, str2) => {
+var areAnagrams = function (str1, str2) {
     if (str1.length !== str2.length) {
-        return false
+        return false;
     }
     if (str1 === str2) {
-        return true
+        return true;
     }
-
-    const lookup = {}
-
-    for (let letter of str1) {
-        lookup[letter] = ++lookup[letter] || 1
+    var lookup = {};
+    for (var _i = 0, str1_1 = str1; _i < str1_1.length; _i++) {
+        var letter = str1_1[_i];
+        lookup[letter] = ++lookup[letter] || 1;
     }
-
-    for (let letter of str2) {
+    for (var _a = 0, str2_1 = str2; _a < str2_1.length; _a++) {
+        var letter = str2_1[_a];
         if (!lookup[letter]) {
-            return false
-        } else {
-            lookup[letter] -= 1
+            return false;
+        }
+        else {
+            lookup[letter] -= 1;
         }
     }
-
-    return true
-}
-
-module.exports = areAnagrams
+    return true;
+};
+module.exports = areAnagrams;
